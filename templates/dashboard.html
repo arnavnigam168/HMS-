@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+    <h1>Welcome, {{ username }}!</h1>
+    <p class="muted">Role: {{ role|capitalize }}</p>
+    <p>Use the navigation bar to manage patients, doctors, appointments, billing, and disease prediction.</p>
+    <div class="chip-row">
+        <span class="chip">Flask Backend</span>
+        <span class="chip">SQLite Database</span>
+        <span class="chip">AI Symptom Scoring</span>
+    </div>
+</section>
+
+<section class="grid-2">
+    <div class="card">
+        <h3>Quick Links</h3>
+        <ul class="clean-list">
+            <li><a href="{{ url_for('patient.patients_page') }}">Manage Patients</a></li>
+            <li><a href="{{ url_for('doctor.doctors_page') }}">Manage Doctors</a></li>
+            <li><a href="{{ url_for('appointment.appointments_page') }}">Book Appointments & Billing</a></li>
+            <li><a href="{{ url_for('ai.ai_page') }}">Run AI Disease Predictor</a></li>
+        </ul>
+    </div>
+    <div class="card">
+        <h3>System Status</h3>
+        <p>Backend: Flask + SQLAlchemy</p>
+        <p>Database: SQLite</p>
+        <p>Frontend: Jinja + JavaScript Fetch API</p>
+    </div>
+</section>
+{% endblock %}

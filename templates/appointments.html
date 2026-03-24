@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+    <h2>Appointment System</h2>
+    <form id="appointment-form" class="form-grid">
+        <select id="appointment-patient" required>
+            <option value="">Select Patient</option>
+        </select>
+        <select id="appointment-doctor" required>
+            <option value="">Select Doctor</option>
+        </select>
+        <input type="datetime-local" id="appointment-datetime" required>
+        <button type="submit">Book Appointment</button>
+    </form>
+</section>
+
+<section class="card">
+    <h3>Appointments</h3>
+    <div class="table-wrap">
+        <table id="appointments-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Patient</th>
+                    <th>Doctor</th>
+                    <th>Date & Time</th>
+                    <th>Bill Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>
+
+<section class="card">
+    <h2>Billing</h2>
+    <form id="bill-form" class="form-grid">
+        <select id="bill-appointment" required>
+            <option value="">Select Appointment</option>
+        </select>
+        <input type="number" step="0.01" id="consultation-fee" placeholder="Consultation Fee" required>
+        <input type="number" step="0.01" id="medicine-fee" placeholder="Medicine Fee" required>
+        <input type="number" step="0.01" id="test-fee" placeholder="Test Fee" required>
+        <button type="submit">Generate Bill</button>
+    </form>
+</section>
+
+<section class="card">
+    <h3>Bill Records</h3>
+    <div class="table-wrap">
+        <table id="bills-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Appointment ID</th>
+                    <th>Patient</th>
+                    <th>Consultation</th>
+                    <th>Medicine</th>
+                    <th>Tests</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

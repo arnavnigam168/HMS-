@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+    <h2>Smart Symptom-based Disease Prediction</h2>
+    <p class="muted">Enter symptoms separated by commas (example: fever, headache, cough, fatigue, body pain)</p>
+    <form id="ai-form" class="form-grid">
+        <input type="text" id="symptoms" placeholder="fever, headache, cough" required>
+        <button type="submit">Predict Disease</button>
+    </form>
+    <p class="muted small-gap">Tip: Add 4-8 symptoms for higher quality predictions.</p>
+</section>
+
+<section class="card">
+    <h3>Prediction Result</h3>
+    <pre id="prediction-output">No prediction yet.</pre>
+</section>
+
+<section class="card">
+    <h3>Supported Symptom Library</h3>
+    <div class="chip-row">
+        {% for symptom in known_symptoms %}
+            <span class="chip">{{ symptom }}</span>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

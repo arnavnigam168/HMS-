@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+    <h2>Patient Management</h2>
+    <form id="patient-form" class="form-grid">
+        <input type="text" id="patient-name" placeholder="Name" required>
+        <input type="number" id="patient-age" placeholder="Age" min="0" required>
+        <select id="patient-gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <input type="text" id="patient-phone" placeholder="Phone" required>
+        <input type="text" id="patient-disease" placeholder="Disease" required>
+        <button type="submit">Add Patient</button>
+    </form>
+</section>
+
+<section class="card">
+    <h3>All Patients</h3>
+    <div class="table-wrap">
+        <table id="patients-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Phone</th>
+                    <th>Disease</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

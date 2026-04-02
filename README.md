@@ -6,6 +6,7 @@ A full-stack **Hospital Management System** built using **Python Flask**, design
 
 ## 🚀 Features
 
+
 ### 🔐 Authentication
 
 * Simple login system (admin/staff)
